@@ -102,28 +102,12 @@ Bun.serve({
           );
         }
 
-        let filename;
-        let size;
-        let download;
-        let thumbs;
-
-        if (data && data.list && data.list.length > 0) {
-          const firstItem = data.list[0];
-          filename = firstItem.server_filename;
-          size = formatBytes(firstItem.size);
-          download = firstItem.dlink;
-          thumbs = firstItem.thumbs;
-        }
-
         return Response.json(
           {
             status: "success",
             response_time: responseTime,
             url: targetUrl,
-            ...(filename && { filename }),
-            ...(size && { size }),
-            ...(download && { download }),
-            ...(thumbs && { thumbs }),
+            list: data.list || [],
           },
           { headers: corsHeaders },
         );

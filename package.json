@@ -1,12 +1,11 @@
 {
     "name": "terabox-dl-ts",
     "version": "1.0.0",
-    "description": "TeraBox Downloader + Telegram Bot",
-    "main": "src/index.ts",
+    "description": "TeraBox Downloader API + Telegram Bot",
+    "main": "src/main.ts",
     "scripts": {
-        "start": "bun src/index.ts",
-        "bot": "bun src/bot.ts",
-        "dev": "bun --watch src/index.ts"
+        "start": "bun src/main.ts",
+        "dev": "bun --watch src/main.ts"
     },
     "dependencies": {
         "axios": "^1.6.0",
